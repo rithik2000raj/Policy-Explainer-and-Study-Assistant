@@ -10,4 +10,6 @@ An intelligent document analysis tool that transforms complex policies and study
 - **Study Tools**: Quick notes generation and interactive quizzes
 - **Multi-Format Support**: PDF, DOCX, and TXT document processing
 
-# Edit the API key in the main program file, and use the how to make it run.txt to make it run! Enjoy!!
+**Edit the API key in the main program file, and use the how to make it run.txt to make it run! Enjoy!!**
+
+**Note:** I have already revoked the API key used in this project
