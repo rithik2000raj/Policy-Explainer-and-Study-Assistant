@@ -1,0 +1,42 @@
+Files Needed to Run This Project
+
+You need these files:
+
+policy_explainer_assistant.py - The main Python file (the code you provided)
+
+requirements.txt - A file listing all dependencies
+
+
+Installation & Setup
+
+For the first step, open Command Prompt (write cmd after pressing 'Windows/command + R' buttons together), then write 'cd (your project folder directory)'
+
+For the second step, do this:
+
+For Windows:
+
+Create and activate virtual environment:
+
+python -m venv policy_env
+policy_env\Scripts\activate
+
+pip install -r requirements.txt
+
+streamlit run policy_explainer_assistant.py
+
+
+
+For Mac:
+
+Open Terminal
+
+Create and activate virtual environment:
+
+python3 -m venv policy_env
+source policy_env/bin/activate
+
+pip install -r requirements.txt
+
+streamlit run policy_explainer_assistant.py
+
+
