@@ -30,7 +30,7 @@ class Config:
 
     def __init__(self):
         # Your exact API key and settings
-        self.GROQ_API_KEY = "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"
+        self.GROQ_API_KEY = "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"
         self.MODEL_NAME = "llama-3.1-8b-instant"
         self.CHUNK_SIZE = 1000
         self.CHUNK_OVERLAP = 200
@@ -599,13 +599,6 @@ STUDY MATERIAL SUMMARY:
 # -------------------- QUICK NOTES PAGE --------------------
 def quick_notes_page():
     """Quick Notes page functionality"""
-    st.set_page_config(
-        page_title="🧠 Quick Notes",
-        page_icon="🧠",
-        layout="centered",
-    )
-
-    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
     st.title("🧠 Quick Notes")
     st.markdown(
         "These are concise key points from your study material — perfect for last-minute revision!"
@@ -637,7 +630,6 @@ def quick_notes_page():
                 formatted_notes += f"- {item}\n"
 
         st.markdown(formatted_notes)
-        st.markdown("</div>", unsafe_allow_html=True)
 
     else:
         st.warning(
@@ -670,9 +662,6 @@ def quick_notes_page():
 # -------------------- QUIZ PAGE --------------------
 def quiz_page():
     """Quiz page functionality"""
-    st.set_page_config(page_title="🧠 Study Quiz", page_icon="🧩", layout="wide")
-    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
-
     st.title("🧠 Study Material Quiz")
     st.markdown("Answer multiple-choice questions generated from your study material!")
 
@@ -840,15 +829,13 @@ class PolicyExplainerApp:
 
     # -------------------- PAGE SETUP --------------------
     def setup_page(self):
+        # Set page config only once at the very beginning
         st.set_page_config(
             page_title="AI Professional & Fresher Assistant",
             page_icon="📚",
             layout="wide",
         )
         st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
-        st.title("📚 AI Professional & Fresher Assistant")
-        st.caption("Understand, summarize, and interact with documents effortlessly.")
-        st.markdown("---")
 
     # -------------------- SESSION STATE --------------------
     def initialize_session_state(self):
@@ -1089,7 +1076,7 @@ class PolicyExplainerApp:
 
     # -------------------- MAIN RUN --------------------
     def run(self):
-        # Check current page
+        # Check current page and render accordingly
         if st.session_state.current_page == "quick_notes":
             quick_notes_page()
             return
@@ -1098,6 +1085,10 @@ class PolicyExplainerApp:
             return
 
         # Main app page
+        st.title("📚 AI Professional & Fresher Assistant")
+        st.caption("Understand, summarize, and interact with documents effortlessly.")
+        st.markdown("---")
+
         tab1, tab2 = st.tabs(["🏢 Professional", "🎓 Fresher"])
         with tab1:
             self.render_professional_tab()
