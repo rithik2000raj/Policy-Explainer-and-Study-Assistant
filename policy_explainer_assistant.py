@@ -30,7 +30,7 @@ class Config:
 
     def __init__(self):
         # Your exact API key and settings
-        self.GROQ_API_KEY = "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"
+        self.GROQ_API_KEY = "your_api_key"
         self.MODEL_NAME = "llama-3.1-8b-instant"
         self.CHUNK_SIZE = 1000
         self.CHUNK_OVERLAP = 200
@@ -1105,3 +1105,4 @@ if __name__ == "__main__":
     except Exception as e:
         st.error(f"❌ Application error: {str(e)}")
         st.info("💡 Please check your configuration and dependencies.")
+
